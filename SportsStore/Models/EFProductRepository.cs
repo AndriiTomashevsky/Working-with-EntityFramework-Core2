@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using Microsoft.EntityFrameworkCore;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace SportsStore.Models
@@ -17,7 +18,7 @@ namespace SportsStore.Models
         {
             get
             {
-                return context.Products;
+                return context.Products.Include(c=>c.Category);
             }
         }
     }
